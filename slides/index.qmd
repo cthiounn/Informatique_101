@@ -35,3 +35,4 @@ format:
 
 
 {{< include Info_1.qmd >}}
+{{< include Info_2.qmd >}}

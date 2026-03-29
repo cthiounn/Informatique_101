@@ -1,0 +1,119 @@
+## Internet
+
+* interconnexion de réseau
+
+## Internet : l'iceberg
+
+* navigation Web (HTTPS)
+
+## Zoom sur les protocoles
+
+* protocole = "langage" standardisé
+* TCP/IP
+* HTTP (80) / HTTPS (443)
+* 1 protocole "internet" = IP + port machine
+
+## Port machine
+
+* Port = "porte"
+* Communication de port à port = porte à porte
+* En général, port de destination fixe (eg. 443 pour HTTPS) et port source aléatoire > 1024
+
+## Réseau et transport
+
+* Réseau : adresses IP publiques/privées
+* Routeur : translation
+* Proxy : "je sors sur Internet"
+* Reverse Proxy : "Internet accède à mes ressources partagées"
+
+## Architecture classique
+
+* Zone utilisateur
+* Zone serveur
+* Zone DMZ
+
+## Protocole HTTP
+
+* Verbe HTTP : GET, POST, DELETE, PUT
+* GET : demande d'une page
+* POST : soumission d'information
+* DELETE, PUT :  autres opérations pour API
+
+## Codes (de statut) HTTP
+
+* 2XX : ok (200 ok)
+* 3XX : ok + opération (302 redirection)
+* 4XX : erreur utilisateur (404 not found, 403 forbidden)
+* 5XX : erreur serveur (500 erreur sereur, 504 Timeout)
+
+
+## Navigateur / pages HTML 
+
+* je tape une URL dans le navigateur
+* Le navigateur interprète l'URL, demande la résolution du FQDN en IP au système DNS
+* Le navigateur envoie la requête à l'IP + protocole
+* Le serveur répond (ou non) avec (en général) une page HTML (+autres ressources)
+* Le navigateur interprète la page HTML + ressources (scripts, css, etc.) et affiche un rendu
+
+## IP et DNS
+
+* IP difficilement retenable
+* translation en nom (www.insee.fr)
+* URL complète : https://www.insee.fr/
+* PROTOCOLE + :// FQDN + page demandé =  HTTPS + www.insee.fr +  /
+* FQDN : www.insee.fr(.)   =  ressource +  org +  top-level org + root dns servers
+* WWW + insee + FR + ROOT 
+
+## DNS hierarchique
+
+* ROOT (.) : 8 serveurs racine DNS -> pointe vers les top-level domain (FR, DE, ORG, COM)
+* chaque top-level domain est géré par son pays : AFNIC -> pointe vers organisations enregistrées (insee.fr.)
+* chaque organisation organise ses ressources : www.insee.fr. /  blog.insee.fr.
+
+
+## Debug
+
+* Pour débugguer le "ca ne marche pas" : comprendre
+* Tester un à un les différents briques
+* Ping ? DNS ? connexion TCP/IP ? Proxy ? retour de la réponse ? etc.
+* Test ceteris paribus ou par variation
+
+## Sauvegarde d'information
+
+* 1/0 sur disque, mémoire temporaire  -> persistance
+* fichiers (OS, système de fichier EXT4/NTFS)
+* disque dur / RAID
+
+## RAID
+
+* RAID 0 (aggregation)
+* RAID 1 (mirroir)
+* RAID 5 (aggregation et redondance distribué)
+
+## Sauvegarde
+
+* duplication sur différents supports
+  * autres disques offline
+  * clé USB
+  * cassette à bande magnétique
+* politique d'archivage
+  * sauvegarde total
+  * sauvegarde incrémental/différentiel
+
+## Sécurité et hygiène informatique
+
+* principe du moindre privilège (utilisateur)
+* principe de défense en profondeur (architecture)
+
+## Sécurité : utilisateur
+
+* Sensibilisation utilisateur
+  * ne pas ouvrir un mail suspect
+  * ne pas brancher un support inconnu (clé usb)
+  * ne pas ouvrir de programme obscur
+  * vérifier les hashs/compiler depuis les (open-)sources
+  * vérifier régulièrement ses ressources numériques
+* Double auth
+  * ne pas réutiliser son mdp, pas de mdp trop court
+  * verrouiller sa session
+ 
